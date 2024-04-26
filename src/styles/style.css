@@ -1,0 +1,275 @@
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("/src/fonts/PlayfairDisplay-VariableFont_wght.ttf");
+  font-style: normal;
+  font-weight: 400-900;
+}
+
+@font-face {
+  font-family: "Cinzel";
+  src: url(/src/fonts/Cinzel-VariableFont_wght.ttf);
+  font-style: normal;
+  font-weight: 400-900;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url('/src/fonts/RobotoCondensed-VariableFont_wght.ttf');
+  font-style: normal;
+  font-weight: 100-900;
+}
+
+/* @font-face {
+  font-family: "Lato";
+  src: url('/src/fonts/Lato-Light.ttf');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url('/src/fonts/Lato-Thin.ttf');
+  font-style: normal;
+  font-weight: 100;
+} */
+
+@font-face {
+  font-family: "Great Vibes";
+  src: url('/src/fonts/GreatVibes-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  --main-color: #c9ab81;
+  --main-font-family: "Roboto Condensed";
+  --support-font-family: "Cinzel", Georgia, "Times New Roman", serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  color: white;
+  background-color: black;
+
+  font-family: var(--main-font-family);
+  font-weight: 200;
+  letter-spacing: 1px;
+  min-width: 750px;
+}
+
+#content {
+  flex: 1;
+}
+
+/* Footer */
+
+footer {
+  display: grid;
+  justify-items: center;
+}
+
+footer p, a {
+  color: rgb(171, 171, 171);
+  font-size: 10px;
+  text-decoration: none;
+}
+
+/* Header with navbar */
+
+.main-header {
+  padding: 20px 15px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* .restaurant-pages {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 50px;
+} */
+
+.restaurant-pages .main-buttons button {
+  width: auto;
+  white-space: nowrap;
+}
+
+.restaurant-pages .main-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: start;
+  align-items: start;
+  padding-bottom: 30px;
+  gap: 50px;
+}
+
+#logo {
+  padding: 0 10px;
+  position: absolute;
+  left: 10px;
+}
+
+#logo img {
+  pointer-events: none;
+  min-width: 160px;
+}
+
+button:not(logo) {
+  align-items: center;
+  font-size: 26px;
+}
+
+button {
+  background: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  font-family: inherit;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+button:hover {
+  color: #ddd;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* Main — Home Page */
+
+#content.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content.home img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+  filter: brightness(90%) saturate(50%);
+}
+
+#content.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.816) 5%, transparent);
+  z-index: -1;
+}
+
+.invitation-container {
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  max-width: 600px;
+  padding-bottom: 150px;
+}
+
+.invitation-container p {
+  margin: 0;
+}
+
+.invitation-container .invitation {
+  font-family: "Great Vibes";
+  font-size: 30px;
+  color: var(--main-color);
+}
+
+.invitation-container .header {
+  color: var(--main-color);
+  font-family: var(--support-font-family);
+  font-size: 65px;
+  font-weight: 500;
+
+  margin: 0 0 30px;
+}
+
+.invitation-container .content {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+button.book {
+  border: 1px solid var(--main-color);
+  padding: 15px 20px;
+  /* font-weight: 700; */
+}
+
+button.book:hover {
+  text-decoration: none;
+  background-color: #c9ab811b;
+}
+
+/* Menu Page */
+
+#content.menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 40px;
+  margin: 20px;
+}
+
+.menu-header {
+  grid-column: 1 /3;
+  justify-self: center;
+}
+
+.menu-subheader {
+  grid-column: 1 /3;
+  /* justify-self: start; */
+}
+
+.menu-name {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.menu-description {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* About Page */
+
+#content {
+  display: grid;
+}
+
+.about-header {
+  justify-self: center;
+}
+
+.about-content {
+  font-size: 25px;
+  padding: 0 50px;
+}

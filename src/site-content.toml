@@ -1,0 +1,41 @@
+[logo.attribution]
+text = "Logo by logturnal on Freepik"
+url = "https://www.freepik.com/free-vector/deer-mascot-illustration-logo_35474792.htm"
+
+[main]
+invitation = "welcome to our delicious corner"
+header = "Nature Gifts"
+content = """Discover delicious dishes made with care and passion. At Nature Gifts, we use quality ingredients to create unforgettable flavors. Join us for a taste of nature's best."""
+
+[main.attribution]
+text = "Background Image by nuraghies on Freepik"
+url = "https://www.freepik.com/free-photo/seared-scallops-with-asparagus-present-dish-refined-taste_134879738.htm#fromView=image_search&page=1&position=1&uuid=e21806cc-6c9c-451e-a40b-e6de345fdb09"
+
+[menu]
+
+[menu.appetizers]
+one = "Sun-Dried Tomato and Cottage Cheese Bruschetta:Crisp baguette slices topped with sun-dried tomatoes marinated in herbs, paired with creamy cottage cheese"
+two = "Artisanal Cheese Plate:Assorted local cheeses with nuts, dried apricots, grapes, honey, tomatoes, and pomegranate"
+three = "Wildwood Savory Salad:Seasoned meat with lettuce, tomatoes, cucumbers, and nuts"
+
+
+[about]
+header = "About Us"
+content = """Welcome to Nature Gifts, where we enjoy nature through delicious food. Our love for good food and the beauty around us keeps things simple. Ingredients from local farmers who share our passion for quality inspire our seasonal menu. Whether indoors or out, our cozy setting is perfect for enjoying great food with loved ones. Experience the warmth and flavor at Nature Gifts."""
+[about.contact]
+header = "Contact Information"
+phone = "+41 22 123 45 67"
+email = "info@naturegiftsrestaurant.ch"
+address = "123 Forest Avenue Mountainville, Switzerland"
+
+[location]
+address = """Nature Gifts Restaurant
+123 Forest Avenue
+Mountainville, Switzerland
+Postal Code: 12345"""
+directions = """Nature Gifts Restaurant is located in the town of Mountainville, Switzerland. Restaurant is easily accessible by car and public transportation."""
+car-route = """If you're driving, simply enter our address into your GPS or navigation app for precise directions. Ample parking is available nearby"""
+public-transport-route = """For those using public transportation, our restaurant is a short walk from the Mountainville train station. Simply follow the signs to Forest Avenue, and you'll find us just a few minutes away."""
+[location.operation]
+header = "Hours of Operation"
+content = "Monday - Sunday: 11:00 AM - 10:00 PM"
