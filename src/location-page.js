@@ -1,12 +1,19 @@
-import { preparePage } from "./utils";
+import { createImageElement, preparePage, createElementWithClassAndText } from "./utils";
+
 import siteContent from "./site-content.toml";
-import { createElementWithClassAndText } from "./utils";
+
+import RestaurantImage from "./images/restaurant-outside.jpg";
+import Leaves from "./images/branches.svg";
+
 
 export function getRestaurantLocationPage() {
   const mainPageContent = preparePage("content", "location");
   const location = siteContent.location;
 
-  const headerElement = createElement("header", [{ tag: "h1", className: "header", text: location.header }]);
+  const restaurantImage = createImageElement(RestaurantImage, "background-image");
+
+  const headerElement = createElementWithClassAndText("h1", "header", location.header);
+  const leavesImg = createImageElement(Leaves, "leaves-icon", 140);
 
   const operationElement = createElement("operation-container", [
     { tag: "h2", className: "header", text: location.operation.header },
@@ -23,7 +30,9 @@ export function getRestaurantLocationPage() {
     { tag: "p", className: "public-transport-route", text: location.directions["public-transport-route"]},
   ]);
 
+  mainPageContent.appendChild(restaurantImage);
   mainPageContent.appendChild(headerElement);
+  mainPageContent.appendChild(leavesImg);
   mainPageContent.appendChild(directionsElement);
   mainPageContent.appendChild(mapElement);
   mainPageContent.appendChild(operationElement);
