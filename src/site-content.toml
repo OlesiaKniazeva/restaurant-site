@@ -3,7 +3,7 @@ text = "Logo by logturnal on Freepik"
 url = "https://www.freepik.com/free-vector/deer-mascot-illustration-logo_35474792.htm"
 
 [main]
-invitation = "welcome to our delicious corner"
+invitation = "welcome to our resaurant"
 header = "Nature Gifts"
 content = """Discover delicious dishes made with care and passion. At Nature Gifts, we use quality ingredients to create unforgettable flavors. Join us for a taste of nature's best."""
 
@@ -21,21 +21,35 @@ three = "Wildwood Savory Salad:Seasoned meat with lettuce, tomatoes, cucumbers, 
 
 [about]
 header = "About Us"
-content = """Welcome to Nature Gifts, where we enjoy nature through delicious food. Our love for good food and the beauty around us keeps things simple. Ingredients from local farmers who share our passion for quality inspire our seasonal menu. Whether indoors or out, our cozy setting is perfect for enjoying great food with loved ones. Experience the warmth and flavor at Nature Gifts."""
+content = """Welcome to Nature Gifts, where we enjoy nature through delicious food.\n Our love for good food and the beauty around us keeps things simple.\n Ingredients from local farmers who share our passion for quality inspire our seasonal menu.\n Whether indoors or out, our cozy setting is perfect for enjoying great food with loved ones.\n Experience the warmth and flavor at Nature Gifts."""
 [about.contact]
 header = "Contact Information"
 phone = "+41 22 123 45 67"
 email = "info@naturegiftsrestaurant.ch"
 address = "123 Forest Avenue Mountainville, Switzerland"
 
+[about.chef]
+name = "Ethan Stone"
+quote = "I believe that great food comes from the heart. At Nature Gifts, I'm honored to share my passion for cooking with each and every guest"
+
+[about.attribution]
+url = """https://unsplash.com/@ninjason?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jason Leung</a> on <a href="https://unsplash.com/photos/photo-of-pub-set-in-room-during-daytime-poI7DelFiVA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"""
+text = "Photo by Jason Leung on Unsplash"
+
 [location]
-address = """Nature Gifts Restaurant
-123 Forest Avenue
-Mountainville, Switzerland
-Postal Code: 12345"""
-directions = """Nature Gifts Restaurant is located in the town of Mountainville, Switzerland. Restaurant is easily accessible by car and public transportation."""
+header = "Our Location"
+
+[location.address]
+header = "Address"
+content = """Rippertschwandstrasse 26
+6045 Meggen, Switzerland"""
+
+[location.directions]
+header = "Directions"
+content = """Nature Gifts is easily accessible by car, with ample parking available nearby. If you're using public transportation, the Meggen train station is just a short walk away. Our restaurant is situated in the heart of Meggen, making it a convenient dining destination for locals and visitors alike."""
 car-route = """If you're driving, simply enter our address into your GPS or navigation app for precise directions. Ample parking is available nearby"""
-public-transport-route = """For those using public transportation, our restaurant is a short walk from the Mountainville train station. Simply follow the signs to Forest Avenue, and you'll find us just a few minutes away."""
+public-transport-route = """For those using public transportation, our restaurant is a short walk from the Meggen train station. Simply follow the signs to Forest Avenue, and you'll find us just a few minutes away."""
+
 [location.operation]
 header = "Hours of Operation"
 content = "Monday - Sunday: 11:00 AM - 10:00 PM"
