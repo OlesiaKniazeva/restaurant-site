@@ -1,11 +1,4 @@
 @font-face {
-  font-family: "PlayfairDisplay";
-  src: url("/src/fonts/PlayfairDisplay-VariableFont_wght.ttf");
-  font-style: normal;
-  font-weight: 400-900;
-}
-
-@font-face {
   font-family: "Cinzel";
   src: url(/src/fonts/Cinzel-VariableFont_wght.ttf);
   font-style: normal;
@@ -14,36 +7,24 @@
 
 @font-face {
   font-family: "Roboto Condensed";
-  src: url('/src/fonts/RobotoCondensed-VariableFont_wght.ttf');
+  src: url("/src/fonts/RobotoCondensed-VariableFont_wght.ttf");
   font-style: normal;
   font-weight: 100-900;
 }
 
-/* @font-face {
-  font-family: "Lato";
-  src: url('/src/fonts/Lato-Light.ttf');
-  font-style: normal;
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "Lato";
-  src: url('/src/fonts/Lato-Thin.ttf');
-  font-style: normal;
-  font-weight: 100;
-} */
-
 @font-face {
   font-family: "Great Vibes";
-  src: url('/src/fonts/GreatVibes-Regular.ttf');
-  font-style: normal;
+  src: url("/src/fonts/GreatVibes-Regular.ttf");
+  font-style: italic;
   font-weight: 400;
 }
 
 :root {
   --main-color: #c9ab81;
-  --main-font-family: "Roboto Condensed";
+  --background-color: rgb(22, 22, 22);
+  --main-font-family: "Roboto Condensed", "Arial Narrow", Helvetica, sans-serif;
   --support-font-family: "Cinzel", Georgia, "Times New Roman", serif;
+  --accent-font-family: "Great Vibes", cursive;
 }
 
 html {
@@ -64,12 +45,18 @@ body {
   min-height: 100vh;
 
   color: white;
-  background-color: black;
+  background-color: var(--background-color);
 
   font-family: var(--main-font-family);
+  font-size: 20px;
   font-weight: 200;
   letter-spacing: 1px;
   min-width: 750px;
+}
+
+body h1, h2 {
+  color: var(--main-color);
+  font-weight: 400;
 }
 
 #content {
@@ -83,7 +70,8 @@ footer {
   justify-items: center;
 }
 
-footer p, a {
+footer p,
+a {
   color: rgb(171, 171, 171);
   font-size: 10px;
   text-decoration: none;
@@ -98,18 +86,12 @@ footer p, a {
   position: relative;
 }
 
-/* .restaurant-pages {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 50px;
-} */
-
-.restaurant-pages .main-buttons button {
+.restaurant-pages-nav .main-buttons-container button {
   width: auto;
   white-space: nowrap;
 }
 
-.restaurant-pages .main-buttons {
+.restaurant-pages-nav .main-buttons-container {
   display: grid;
   grid-template-columns: repeat(4, auto);
   justify-content: start;
@@ -131,7 +113,7 @@ footer p, a {
 
 button:not(logo) {
   align-items: center;
-  font-size: 26px;
+  font-size: 1.5rem;
 }
 
 button {
@@ -151,10 +133,16 @@ button {
   letter-spacing: 2px;
 }
 
-button:hover {
-  color: #ddd;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+.main-buttons-container button.active {
+  color: var(--main-color);
+  font-weight: 300;
+  border-bottom: 1px solid var(--main-color);
+  padding-bottom: 1px;
+}
+
+.main-buttons-container button:hover {
+  border-bottom: 1px solid var(--main-color);
+  padding-bottom: 1px;
 }
 
 /* Main — Home Page */
@@ -165,7 +153,7 @@ button:hover {
   align-items: center;
 }
 
-#content.home img {
+#content.home .background-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -200,15 +188,15 @@ button:hover {
 }
 
 .invitation-container .invitation {
-  font-family: "Great Vibes";
-  font-size: 30px;
+  font-family: var(--accent-font-family);
+  font-size: 2rem;
   color: var(--main-color);
 }
 
 .invitation-container .header {
   color: var(--main-color);
   font-family: var(--support-font-family);
-  font-size: 65px;
+  font-size: 4rem;
   font-weight: 500;
 
   margin: 0 0 30px;
@@ -222,7 +210,6 @@ button:hover {
 button.book {
   border: 1px solid var(--main-color);
   padding: 15px 20px;
-  /* font-weight: 700; */
 }
 
 button.book:hover {
@@ -251,25 +238,105 @@ button.book:hover {
 
 .menu-name {
   font-weight: 700;
-  font-size: 18px;
 }
 
 .menu-description {
   font-weight: 400;
-  font-size: 14px;
 }
+
+/* Location Page */
+
+#content.location {
+  display: grid;
+  justify-items: start;
+  padding: 30px;
+}
+
+.location .header {
+  justify-self: center;
+
+  margin-top: 40px;
+  font-size: 3rem;
+}
+
+.location .directions-container {
+  justify-self: center;
+  max-width: 800px;
+}
+
+.location .operation-container {
+  justify-self: center;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.location h2.header {
+  justify-self: start;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.location .map-container {
+
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  filter: grayscale(100%);         
+}
+
+.location .map-container p {
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+
 
 /* About Page */
 
+.about .background-image {
+  width: 100vw;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  filter: brightness(50%) saturate(50%);
+  object-fit: cover;
+}
+
+#content.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.816), transparent);
+  z-index: -1;
+}
+ 
 #content {
   display: grid;
+  justify-items: center;
 }
 
 .about-header {
   justify-self: center;
+  margin: 150px 0 150px;
+  font-size: 5rem;
 }
 
-.about-content {
-  font-size: 25px;
+.about-us-data {
+  font-size: 1.5rem;
   padding: 0 50px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.contacts-container {
+  display: grid;
+  justify-content: center;
 }

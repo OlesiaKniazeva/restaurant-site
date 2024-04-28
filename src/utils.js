@@ -21,3 +21,29 @@ export function createAttributionElement(url, text) {
   attributionElement.rel = 'noopener noreferrer'; 
   return attributionElement;
 }
+
+export function createImageElement(imageFile, className, width=0, height=width) {
+  const img = new Image();
+  img.src = imageFile;
+  img.width = width;
+  img.height = height;
+  img.classList.add(className);
+
+  return img;
+}
+
+export function createSetOfParagraphs(data, classNameContainer, classNameData) {
+  const contentDiv = document.createElement('div');
+  contentDiv.classList.add(classNameContainer);
+
+  let lines = data.split('\n');
+
+  lines.forEach(line => {
+    const p = document.createElement('p');
+    p.textContent = line;
+    p.classList.add(classNameData);
+    contentDiv.appendChild(p);
+  })
+
+  return contentDiv;
+}

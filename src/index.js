@@ -3,35 +3,38 @@ import { getRestaurantMenuPage } from "./menu-page.js";
 import { getRestaurantLocationPage } from "./location-page.js";
 import { getRestaurantAboutPage } from "./about-page.js";
 import "./styles/style.css";
+import { createImageElement } from "./utils.js";
 
 import Logo from "./images/logo2.svg";
 
 console.log("Webpack started!");
 
 const header = document.querySelector(".main-header");
-const mainPageContent = document.getElementById("content");
+const footer = document.getElementById("footer");
 
-const logoButton = document.getElementById("logo");
-
-const logoImage = new Image();
-logoImage.src = Logo;
-logoImage.width = 140;
-logoImage.height = 140;
-logoButton.appendChild(logoImage);
+const mainButtons = document.querySelectorAll(".main-buttons-container button");
+console.log(mainButtons);
 
 const pageFunctions = {
   logo: getRestaurantHomePage,
   home: getRestaurantHomePage,
   menu: getRestaurantMenuPage,
   location: getRestaurantLocationPage,
-  about: getRestaurantAboutPage
+  about: getRestaurantAboutPage,
 };
 
+setUpLogo();
 let currentPage = 'home';
-// let currentPage = 'menu';
 pageFunctions[currentPage]();
 
 header.addEventListener("click", changePage);
+
+function setUpLogo() {
+  const logoButton = document.getElementById("logo");
+  const logoImage = createImageElement(Logo, "logo", 140);
+
+  logoButton.appendChild(logoImage);
+}
 
 function changePage(event) {
   const clickedId = event.target.id;
@@ -43,8 +46,24 @@ function changePage(event) {
   if (currentPage === clickedId) {
     return;
   }
-  currentPage = clickedId; 
+
+  currentPage = clickedId;
+  changeActiveButton(event.target);
+  resetFooter(footer);
 
   const pageFunction = pageFunctions[currentPage];
   pageFunction();
+}
+
+function resetFooter(footer) {
+  while (footer.firstChild) {
+    footer.removeChild(footer.firstChild);
+  }
+}
+
+function changeActiveButton(currentButton) {
+  mainButtons.forEach((button) => {
+    button.classList.remove("active");
+  });
+  currentButton.classList.add("active");
 }
