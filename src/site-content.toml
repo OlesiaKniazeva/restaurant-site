@@ -30,7 +30,8 @@ address = "123 Forest Avenue Mountainville, Switzerland"
 
 [about.chef]
 name = "Ethan Stone"
-quote = "I believe that great food comes from the heart. At Nature Gifts, I'm honored to share my passion for cooking with each and every guest"
+quote = "I believe that great food comes from the heart. I'm honored to share my passion for cooking with each and every guest"
+title = "Chef"
 
 [about.attribution]
 url = """https://unsplash.com/@ninjason?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jason Leung</a> on <a href="https://unsplash.com/photos/photo-of-pub-set-in-room-during-daytime-poI7DelFiVA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"""

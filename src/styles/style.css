@@ -21,7 +21,9 @@
 
 :root {
   --main-color: #c9ab81;
+  --wide-font-color: #c9c8cbf2;
   --background-color: rgb(22, 22, 22);
+  
   --main-font-family: "Roboto Condensed", "Arial Narrow", Helvetica, sans-serif;
   --support-font-family: "Cinzel", Georgia, "Times New Roman", serif;
   --accent-font-family: "Great Vibes", cursive;
@@ -54,7 +56,8 @@ body {
   min-width: 750px;
 }
 
-body h1, h2 {
+body h1,
+h2 {
   color: var(--main-color);
   font-weight: 400;
 }
@@ -277,13 +280,12 @@ button.book:hover {
 }
 
 .location .map-container {
-
   width: 100%;
   display: grid;
   justify-content: center;
   margin-bottom: 20px;
 
-  filter: grayscale(100%);         
+  filter: grayscale(100%);
 }
 
 .location .map-container p {
@@ -291,8 +293,6 @@ button.book:hover {
   font-weight: 400;
   font-size: 18px;
 }
-
-
 
 /* About Page */
 
@@ -317,7 +317,7 @@ button.book:hover {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.816), transparent);
   z-index: -1;
 }
- 
+
 #content {
   display: grid;
   justify-items: center;
@@ -336,7 +336,65 @@ button.book:hover {
   text-align: center;
 }
 
+.chef-info-container {
+  display: grid;
+  justify-items: center;
+
+  margin: 50px;
+}
+
+.chef-info-container p {
+  margin: 0;
+}
+
+.chef-info-container img {
+  height: auto;
+  width: 250px;
+  border-radius: 50%;
+}
+
+.chef-info-container .chef-quote {
+  font-family: var(--accent-font-family);
+  font-size: 2.8rem;
+  max-width: 900px;
+  margin: 10px;
+  color: var(--wide-font-color);
+}
+
+.chef-info-container .chef-name {
+  color: var(--main-color);
+  font-weight: 400;
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+
+.chef-info-container .chef-title {
+  font-weight: 300;
+  color: var(--wide-font-color);
+  margin-bottom: 80px;
+}
+
+.chef-info-container::after {
+  content: '';
+  display: block;
+  border-bottom: 1px solid var(--main-color);
+  width: 100%;
+  margin: 1rem 0;
+}
+
 .contacts-container {
   display: grid;
-  justify-content: center;
+  justify-items: start;
+
+  gap: 10px;
+  margin-bottom: 100px;
+}
+
+.contacts-container .header {
+  justify-self: center;
+  font-size: 2.5rem;
+}
+
+.contacts-container p {
+  margin: 0;
 }
