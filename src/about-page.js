@@ -15,80 +15,86 @@ export function getRestaurantAboutPage() {
   const mainPageContent = preparePage("content", "about");
   const footer = preparePage("footer", "about");
 
+  const about = siteContent.about;
+
   const aboutImage = createImageElement(Restaurant, "background-image");
   mainPageContent.appendChild(aboutImage);
 
   const aboutHeader = createElementWithClassAndText(
     "h1",
     "about-header",
-    siteContent.about.header
+    about.header
   );
+
   const aboutContent = createSetOfParagraphs(
-    siteContent.about.content,
+    about.content,
     "about-us-container",
     "about-us-data"
   );
 
-  mainPageContent.appendChild(aboutHeader);
-
   const leavesImg = createImageElement(Leaves, "leaves-icon", 140);
+  const chefContainer = createChefInfo(about);
+  const contactsContainer = createContactInformation(about);
+
+  mainPageContent.appendChild(aboutHeader);
   mainPageContent.appendChild(leavesImg);
-
   mainPageContent.appendChild(aboutContent);
-
-  const chefContainer = createChefInfo();
   mainPageContent.appendChild(chefContainer);
-
-  const contactsContainer = createContactInformation();
   mainPageContent.appendChild(contactsContainer);
 
-  updateFooterContent(footer);
+  updateFooterContent(footer, about);
 }
 
-function createChefInfo() {
+function createChefInfo(about) {
   const chefInfoContainer = document.createElement("div");
+  chefInfoContainer.classList.add("chef-info-container");
 
-  const chefImg = createImageElement(Chef, "chef-image");
+  const chefImg = createImageElement(Chef, "chef-image", 300);
   const chefQuote = createElementWithClassAndText(
     "p",
     "chef-quote",
-    siteContent.about.chef.quote
+    about.chef.quote
   );
   const chefName = createElementWithClassAndText(
     "p",
     "chef-name",
-    siteContent.about.chef.name
+    about.chef.name
+  );
+  const chefTitle = createElementWithClassAndText(
+    "p",
+    "chef-title",
+    about.chef.title
   );
 
-  [chefImg, chefQuote, chefName].forEach((el) =>
+  [chefImg, chefQuote, chefName, chefTitle].forEach((el) =>
     chefInfoContainer.appendChild(el)
   );
   return chefInfoContainer;
 }
 
-function createContactInformation() {
+function createContactInformation(about) {
   const contactsContainer = document.createElement("div");
   contactsContainer.classList.add("contacts-container");
 
   const contactHeader = createElementWithClassAndText(
     "h2",
     "header",
-    siteContent.about.contact.header
+    about.contact.header
   );
   const phone = createElementWithClassAndText(
     "p",
     "phone",
-    `Phone: ${siteContent.about.contact.phone}`
+    `Phone: ${about.contact.phone}`
   );
   const email = createElementWithClassAndText(
     "p",
     "email",
-    `Email: ${siteContent.about.contact.email}`
+    `Email: ${about.contact.email}`
   );
   const address = createElementWithClassAndText(
     "p",
     "addres",
-    `Address: ${siteContent.about.contact.address}`
+    `Address: ${about.contact.address}`
   );
   [contactHeader, phone, email, address].forEach((el) =>
     contactsContainer.appendChild(el)
@@ -96,10 +102,10 @@ function createContactInformation() {
   return contactsContainer;
 }
 
-function updateFooterContent(footer) {
+function updateFooterContent(footer, about) {
   const imageAttribution = createAttributionElement(
-    siteContent.about.attribution.url,
-    siteContent.about.attribution.text
+    about.attribution.url,
+    about.attribution.text
   );
 
   const contentContainer = document.createElement("p");
