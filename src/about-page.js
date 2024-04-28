@@ -104,13 +104,22 @@ function createContactInformation(about) {
 
 function updateFooterContent(footer, about) {
   const imageAttribution = createAttributionElement(
-    about.attribution.url,
-    about.attribution.text
+    about.attribution["background-image"].url,
+    about.attribution["background-image"].text
+  );
+
+  const imageAttribution2 = createAttributionElement(
+    about.attribution["chef-image"].url,
+    about.attribution["chef-image"].text
   );
 
   const contentContainer = document.createElement("p");
   contentContainer.classList.add("attribution-content");
 
+  const comma = document.createTextNode(", ");
+
   contentContainer.appendChild(imageAttribution);
+  contentContainer.appendChild(comma);
+  contentContainer.appendChild(imageAttribution2);
   footer.appendChild(contentContainer);
 }

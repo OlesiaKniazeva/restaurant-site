@@ -34,8 +34,14 @@ quote = "I believe that great food comes from the heart. I'm honored to share my
 title = "Chef"
 
 [about.attribution]
+
+[about.attribution.background-image]
 url = """https://unsplash.com/@ninjason?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jason Leung</a> on <a href="https://unsplash.com/photos/photo-of-pub-set-in-room-during-daytime-poI7DelFiVA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"""
-text = "Photo by Jason Leung on Unsplash"
+text = "Background photo by Jason Leung on Unsplash"
+
+[about.attribution.chef-image]
+url = """https://www.freepik.com/free-photo/medium-shot-professional-chef-posing_138239628.htm"""
+text = "Chef image by freepik"
 
 [location]
 header = "Our Location"
