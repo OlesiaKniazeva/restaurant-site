@@ -22,7 +22,7 @@ export function getRestaurantAboutPage() {
 
   const aboutHeader = createElementWithClassAndText(
     "h1",
-    "about-header",
+    "header",
     about.header
   );
 
