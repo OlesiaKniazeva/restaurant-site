@@ -1,9 +1,10 @@
-import RestImg from "./images/main1.jpg";
+import MainImg from "./images/main1.jpg";
 import siteContent from "./site-content.toml";
 import {
   preparePage,
   createElementWithClassAndText,
   createAttributionElement,
+  createImageElement
 } from "./utils";
 
 export function getRestaurantHomePage() {
@@ -35,9 +36,8 @@ function updateFooterContent(footer) {
 }
 
 function updateMainPageContent(mainPage) {
-  const restaurantImage = new Image();
-  restaurantImage.src = RestImg;
-  mainPage.appendChild(restaurantImage);
+  const mainImage = createImageElement(MainImg, 'background-image');
+  mainPage.appendChild(mainImage);
 
   const mainInvitiation = createMainInvitationElement();
   mainInvitiation.classList.add("invitation-container");
