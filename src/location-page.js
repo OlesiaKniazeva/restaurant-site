@@ -1,4 +1,4 @@
-import { createImageElement, preparePage, createElementWithClassAndText } from "./utils";
+import { createAttributionData, createImageElement, preparePage, createElementWithClassAndText } from "./utils";
 
 import siteContent from "./site-content.toml";
 
@@ -8,6 +8,8 @@ import Leaves from "./images/branches.svg";
 
 export function getRestaurantLocationPage() {
   const mainPageContent = preparePage("content", "location");
+  const footer = preparePage("footer", "location");
+
   const location = siteContent.location;
 
   const restaurantImage = createImageElement(RestaurantImage, "background-image");
@@ -36,6 +38,9 @@ export function getRestaurantLocationPage() {
   mainPageContent.appendChild(directionsElement);
   mainPageContent.appendChild(mapElement);
   mainPageContent.appendChild(operationElement);
+
+  const attributionData = createAttributionData(location.attribution);
+  footer.appendChild(attributionData);
 
   return mainPageContent;
 }

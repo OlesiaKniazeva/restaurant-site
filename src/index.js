@@ -7,13 +7,10 @@ import { createImageElement } from "./utils.js";
 
 import Logo from "./images/logo2.svg";
 
-console.log("Webpack started!");
-
 const header = document.querySelector(".main-header");
 const footer = document.getElementById("footer");
 
 const mainButtons = document.querySelectorAll(".main-buttons-container button");
-console.log(mainButtons);
 
 const pageFunctions = {
   logo: getRestaurantHomePage,

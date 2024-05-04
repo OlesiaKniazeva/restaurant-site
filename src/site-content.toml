@@ -7,17 +7,192 @@ invitation = "welcome to our resaurant"
 header = "Nature Gifts"
 content = """Discover delicious dishes made with care and passion. At Nature Gifts, we use quality ingredients to create unforgettable flavors. Join us for a taste of nature's best."""
 
-[main.attribution]
+[[main.attribution]]
 text = "Background Image by nuraghies on Freepik"
 url = "https://www.freepik.com/free-photo/seared-scallops-with-asparagus-present-dish-refined-taste_134879738.htm#fromView=image_search&page=1&position=1&uuid=e21806cc-6c9c-451e-a40b-e6de345fdb09"
 
 [menu]
 
-[menu.appetizers]
-one = "Sun-Dried Tomato and Cottage Cheese Bruschetta:Crisp baguette slices topped with sun-dried tomatoes marinated in herbs, paired with creamy cottage cheese"
-two = "Artisanal Cheese Plate:Assorted local cheeses with nuts, dried apricots, grapes, honey, tomatoes, and pomegranate"
-three = "Wildwood Savory Salad:Seasoned meat with lettuce, tomatoes, cucumbers, and nuts"
+header = "Our Menu"
 
+[menu.appetizers]
+supheader = "Strarters"
+header = "Appetizers"
+
+[[menu.appetizers.items]]
+name = "Sun-Dried Tomato & Cottage Cheese Bruschetta"
+description = "Crisp baguette slices topped with sun-dried tomatoes marinated in herbs, paired with creamy cottage cheese"
+price = 12.50
+
+[[menu.appetizers.items]]
+name = "Artisanal Cheese Plate"
+description = "Assorted local cheeses with nuts, dried apricots, grapes, honey, tomatoes, and pomegranate"
+price = 18.00
+
+[[menu.appetizers.items]]
+name = "Wildwood Savory Salad"
+description = "Seasoned meat with lettuce, tomatoes, cucumbers, and nuts"
+price = 10.50
+
+[[menu.appetizers.items]]
+name = "Smoked Salmon Crostini"
+description = "House-smoked salmon served on crispy crostini, topped with herbed cream cheese and capers"
+price = 14.00
+
+[[menu.appetizers.items]]
+name = "Venison Carpaccio"
+description = "Thinly sliced venison tenderloin drizzled with olive oil, lemon juice, capers, and Parmesan shavings"
+price = 16.00
+
+[[menu.appetizers.items]]
+name = "Stuffed Mushrooms"
+description = "Button mushrooms filled with herbed cream cheese, baked until golden brown"
+price = 11.50
+
+
+[menu.entrees]
+supheader = "Entrees"
+header = "Main Courses"
+
+[[menu.entrees.items]]
+name = "Alpine Beef Stew"
+description = "Tender chunks of beef slow-cooked with root vegetables and red wine, served with buttery mashed potatoes"
+price =  28.00
+
+[[menu.entrees.items]]
+name = "Pan-Seared Salmon"
+description = "Fresh salmon fillet pan-seared to perfection, served with lemon herb butter sauce, roasted potatoes, and seasonal vegetables"
+price =  32.00
+
+[[menu.entrees.items]]
+name = "Wild Mushroom Risotto"
+description = "Creamy Arborio rice cooked with assorted wild mushrooms, finished with Parmesan cheese and truffle oil"
+price =  26.00
+
+[[menu.entrees.items]]
+name = "Venison Medallions"
+description = "Grilled venison medallions served with cranberry port reduction, roasted root vegetables, and garlic mashed potatoes"
+price =  34.00
+
+[[menu.entrees.items]]
+name = "Swiss Cheese Fondue"
+description = "A traditional Swiss cheese fondue made with Emmental and Gruyère cheeses, served with crusty bread and pickles"
+price =  30.00
+
+[[menu.entrees.items]]
+name = "Forest Mushroom Tagliatelle"
+description = "Fresh tagliatelle pasta tossed with a creamy forest mushroom sauce, garnished with Parmesan cheese and fresh herbs"
+price =  24.00
+
+[menu.desserts]
+supheader = "Desserts"
+header = "Sweet Course"
+
+[[menu.desserts.items]]
+name = "Chocolate Fondant"
+description = "Rich chocolate fondant with a molten chocolate center, served with vanilla bean ice cream and raspberry coulis"
+price = 12.00
+
+[[menu.desserts.items]]
+name = "Swiss Apple Strudel"
+description = "Traditional Swiss apple strudel with cinnamon-spiced apples, raisins, and almonds, served warm with vanilla sauce"
+price = 10.00
+
+[[menu.desserts.items]]
+name = "Berries & Cream Tart"
+description = "Shortcrust pastry tart filled with fresh berries and vanilla cream, finished with a dusting of powdered sugar"
+price = 11.00
+
+[[menu.desserts.items]]
+name = "Hazelnut Mousse Cake"
+description = "Decadent hazelnut mousse cake layered with chocolate ganache, topped with chopped hazelnuts and whipped cream"
+price = 13.00
+
+[[menu.desserts.items]]
+name = "Swiss Chocolate Truffles"
+description = "Handmade Swiss chocolate truffles dusted with cocoa powder, served with a selection of berries"
+price = 9.00
+
+[[menu.desserts.items]]
+name = "Lemon Sorbet"
+description = "Refreshing lemon sorbet served in a citrus cup, garnished with mint leaves"
+price = 8.00
+
+
+[menu.drinks]
+supheader = "beverage"
+header = "Drinks"
+
+[[menu.drinks.items]]
+name = "Mojito"
+description = "A refreshing cocktail with white rum, fresh mint, lime juice, sugar, and soda water"
+price = 12.00
+
+[[menu.drinks.items]]
+name = "Margarita"
+description = "A classic cocktail with tequila, triple sec, lime juice, and simple syrup, served with a salted rim"
+price = 11.00
+
+[[menu.drinks.items]]
+name = "Pina Colada"
+description = "A tropical cocktail with rum, coconut cream, and pineapple juice, served blended with ice and garnished with pineapple and cherry"
+price = 13.00
+
+[[menu.drinks.items]]
+name = "Negroni"
+description = "Cocktail with gin, Campari, and sweet vermouth, served on the rocks with an orange twist"
+price = 14.00
+
+[[menu.drinks.items]]
+name = "Old Fashioned"
+description = "A classic cocktail with bourbon or rye whiskey, sugar, and bitters, garnished with orange and cherry"
+price = 15.00
+
+[[menu.drinks.items]]
+name = "Swiss White Wine"
+description = "A crisp and refreshing Swiss white wine"
+price = 9.00
+
+[[menu.drinks.items]]
+name = "Alpine Spritz"
+description = "Blend of Prosecco, Aperol, and soda water, garnished with a slice of orange."
+price = 11.00
+
+[[menu.drinks.items]]
+name = "Local Craft Beer"
+description = "Cold local craft beer, brewed right here in Switzerland."
+price = 7.00
+
+[[menu.drinks.items]]
+name = "Swiss Red Wine"
+description = "A smooth and velvety Swiss red wine, with notes of dark berries and spices."
+price = 10.00
+
+[[menu.drinks.items]]
+name = "Alpine Hot Chocolate"
+description = "Hot chocolate, topped with whipped cream and chocolate shavings."
+price = 6.00
+
+[[menu.drinks.items]]
+name = "Swiss Coffee"
+description = "Classic Swiss coffee, made with freshly ground beans and served with a chocolate truffle."
+price = 5.00
+
+[[menu.attribution]]
+url = """https://www.freepik.com"""
+text = "Background and Dessert Images by Freepik"
+
+[[menu.attribution]]
+url = """https://www.freepik.com/free-photo/cheese-plate-with-parmesan-blue-white-cheese-fruits-nuts_7268541.htm"""
+text = "Cheese Plate Image by KamranAydinov on Freepik"
+
+[[menu.attribution]]
+url = """https://unsplash.com/photos/cooked-meat-on-tray-NYBnDWeOX2c"""
+text = "Meat image by Loija Nguyen on Unsplash"
+
+[[menu.attribution]]
+url = """https://www.freepik.com/free-photo/side-view-refreshing-orange-cocktail_8049559.htm"""
+text = "Cocktail images by stockking on Freepik"
 
 [about]
 header = "About Us"
@@ -33,13 +208,12 @@ name = "Ethan Stone"
 quote = "I believe that great food comes from the heart. I'm honored to share my passion for cooking with each and every guest"
 title = "Chef"
 
-[about.attribution]
 
-[about.attribution.background-image]
-url = """https://unsplash.com/@ninjason?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jason Leung</a> on <a href="https://unsplash.com/photos/photo-of-pub-set-in-room-during-daytime-poI7DelFiVA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"""
-text = "Background photo by Jason Leung on Unsplash"
+[[about.attribution]]
+url = """https://unsplash.com/photos/photo-of-pub-set-in-room-during-daytime-poI7DelFiVA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jason Leung</a> on <a href="https://unsplash.com/photos/photo-of-pub-set-in-room-during-daytime-poI7DelFiVA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"""
+text = "Background image by Jason Leung on Unsplash"
 
-[about.attribution.chef-image]
+[[about.attribution]]
 url = """https://www.freepik.com/free-photo/medium-shot-professional-chef-posing_138239628.htm"""
 text = "Chef image by freepik"
 
@@ -60,3 +234,7 @@ public-transport-route = """For those using public transportation, our restauran
 [location.operation]
 header = "Hours of Operation"
 content = "Monday - Sunday: 11:00 AM - 10:00 PM"
+
+[[location.attribution]]
+text = "Photo by Karl Hedin on Unsplash"
+url = """https://unsplash.com/photos/a-body-of-water-with-buildings-along-it-L-bWZ4KBXU4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"""

@@ -2,7 +2,7 @@ import siteContent from "./site-content.toml";
 import {
   preparePage,
   createElementWithClassAndText,
-  createAttributionElement,
+  createAttributionData,
   createImageElement,
   createSetOfParagraphs,
 } from "./utils";
@@ -18,7 +18,6 @@ export function getRestaurantAboutPage() {
   const about = siteContent.about;
 
   const aboutImage = createImageElement(Restaurant, "background-image");
-  mainPageContent.appendChild(aboutImage);
 
   const aboutHeader = createElementWithClassAndText(
     "h1",
@@ -36,13 +35,15 @@ export function getRestaurantAboutPage() {
   const chefContainer = createChefInfo(about);
   const contactsContainer = createContactInformation(about);
 
+  mainPageContent.appendChild(aboutImage);
   mainPageContent.appendChild(aboutHeader);
   mainPageContent.appendChild(leavesImg);
   mainPageContent.appendChild(aboutContent);
   mainPageContent.appendChild(chefContainer);
   mainPageContent.appendChild(contactsContainer);
 
-  updateFooterContent(footer, about);
+  const attributionData = createAttributionData(about.attribution);
+  footer.appendChild(attributionData);
 }
 
 function createChefInfo(about) {
@@ -100,26 +101,4 @@ function createContactInformation(about) {
     contactsContainer.appendChild(el)
   );
   return contactsContainer;
-}
-
-function updateFooterContent(footer, about) {
-  const imageAttribution = createAttributionElement(
-    about.attribution["background-image"].url,
-    about.attribution["background-image"].text
-  );
-
-  const imageAttribution2 = createAttributionElement(
-    about.attribution["chef-image"].url,
-    about.attribution["chef-image"].text
-  );
-
-  const contentContainer = document.createElement("p");
-  contentContainer.classList.add("attribution-content");
-
-  const comma = document.createTextNode(", ");
-
-  contentContainer.appendChild(imageAttribution);
-  contentContainer.appendChild(comma);
-  contentContainer.appendChild(imageAttribution2);
-  footer.appendChild(contentContainer);
 }

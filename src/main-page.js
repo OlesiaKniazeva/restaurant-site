@@ -3,7 +3,7 @@ import siteContent from "./site-content.toml";
 import {
   preparePage,
   createElementWithClassAndText,
-  createAttributionElement,
+  createAttributionData,
   createImageElement
 } from "./utils";
 
@@ -11,29 +11,11 @@ export function getRestaurantHomePage() {
   const mainPage = preparePage("content", "home");
   const footer = preparePage("footer", "home");
   updateMainPageContent(mainPage);
-  updateFooterContent(footer);
+  
+  const attributionData = createAttributionData(siteContent.main.attribution);
+  footer.appendChild(attributionData);
 }
 
-function updateFooterContent(footer) {
-  const imageAttribution = createAttributionElement(
-    siteContent.main.attribution.url,
-    siteContent.main.attribution.text
-  );
-  const logoAttribution = createAttributionElement(
-    siteContent.logo.attribution.url,
-    siteContent.logo.attribution.text
-  );
-  const comma = document.createTextNode(", ");
-
-  const contentContainer = document.createElement("p");
-  contentContainer.classList.add("attribution-content");
-
-  contentContainer.appendChild(imageAttribution);
-  contentContainer.appendChild(comma);
-  contentContainer.appendChild(logoAttribution);
-
-  footer.appendChild(contentContainer);
-}
 
 function updateMainPageContent(mainPage) {
   const mainImage = createImageElement(MainImg, 'background-image');

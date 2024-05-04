@@ -13,6 +13,24 @@ export function createElementWithClassAndText(elementType, className, text) {
   return el;
 }
 
+export function createAttributionData(attributions) {
+  const attributionContainer = document.createElement('p');
+  attributionContainer.classList.add('attribution-content');
+
+
+  for (let i = 0; i < attributions.length; ++i) {
+    if (i !== 0) {
+      const comma = document.createTextNode(", ");
+      attributionContainer.appendChild(comma);
+    }
+
+    const attributionItem = createAttributionElement(attributions[i].url, attributions[i].text);
+    attributionContainer.appendChild(attributionItem);
+  }
+
+  return attributionContainer;
+}
+
 export function createAttributionElement(url, text) {
   const attributionElement = document.createElement("a");
   attributionElement.href = url;

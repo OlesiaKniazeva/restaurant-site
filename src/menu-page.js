@@ -1,71 +1,128 @@
-import Bruschetta from "./images/bruschetta.jpg";
 import CheesePlate from "./images/cheese-plate.jpg";
-import MeatSalad from "./images/meat-salad.jpg";
+import MenuBackground from "./images/menu-background.jpg";
+import Leaves from "./images/branches.svg";
+import Meat from "./images/meat.jpg"
+import Dessert from "./images/dessert.jpg"
+import Drinks from "./images/cocktails.jpg";
 
 import siteContent from "./site-content.toml";
-import { preparePage } from "./utils";
-
+import {
+  preparePage,
+  createImageElement,
+  createAttributionData,
+  createElementWithClassAndText,
+} from "./utils";
 
 export function getRestaurantMenuPage() {
-  const mainPageContent = preparePage('content', 'menu');
+  const mainPageContent = preparePage("content", "menu");
+  const footer = preparePage("footer", "menu");
 
-  const menu = document.createElement("h1");
-  menu.textContent = "Menu";
-  menu.classList.add("menu-header");
-  mainPageContent.appendChild(menu);
+  const menu = siteContent.menu;
+  const menuImage = createImageElement(MenuBackground, "background-image");
 
-  const appetizers = createMenuSection(
-    "Appetizers",
-    Object.values(siteContent.menu.appetizers)
+  const headerElement = createElementWithClassAndText(
+    "h1",
+    "header",
+    menu.header
   );
-  appetizers.forEach((element) => mainPageContent.appendChild(element));
+  const leavesImg = createImageElement(Leaves, "leaves-icon", 140);
 
-  const bruschettaImage = createImage(Bruschetta);
-  const cheesePlateImage = createImage(CheesePlate);
-  const meatSaladImage = createImage(MeatSalad);
+  const appetizerSection = createSectionElement(menu.appetizers);
+  const appetizersSectionImg = createImageElement(CheesePlate, "section-image");
 
-  mainPageContent.appendChild(cheesePlateImage);
-  mainPageContent.appendChild(bruschettaImage);
-  mainPageContent.appendChild(meatSaladImage);
+  const mainCourseSection = createSectionElement(menu.entrees);
+  const mainSectionImg = createImageElement(Meat, "section-image");
+
+  const sweetSection = createSectionElement(menu.desserts);
+  const sweetSectionImg = createImageElement(Dessert, "section-image");
+
+  const drinksSection = createSectionElement(menu.drinks);
+  const drinksSectionImg = createImageElement(Drinks, "section-image");
 
 
+  mainPageContent.appendChild(menuImage);
+  mainPageContent.appendChild(headerElement);
+
+  mainPageContent.appendChild(leavesImg);
+
+  mainPageContent.appendChild(appetizerSection);
+  mainPageContent.appendChild(appetizersSectionImg);
+  mainPageContent.appendChild(mainCourseSection);
+  mainPageContent.appendChild(mainSectionImg);
+  mainPageContent.appendChild(sweetSection);
+  mainPageContent.appendChild(sweetSectionImg);
+  mainPageContent.appendChild(drinksSection)
+  mainPageContent.appendChild(drinksSectionImg);
+
+  const attributionData = createAttributionData(menu.attribution);
+  footer.appendChild(attributionData);
 }
 
-function createImage(image) {
-  const img = new Image();
-  img.src = image;
 
-  return img;
-}
+function createSectionElement(section) {
+  const sectionContainer = document.createElement("div");
+  sectionContainer.classList.add("section-container");
 
-function createMenuItem(text) {
-  const [name, description] = text.split(":");
+  const headerContainer = document.createElement('div');
+  headerContainer.classList.add('header-container');
 
-  const nameElement = document.createElement("span");
-  nameElement.textContent = name;
-  nameElement.classList.add("menu-name");
-
-  const descriptionElement = document.createElement("span");
-  descriptionElement.textContent = description;
-  descriptionElement.classList.add("menu-description");
-
-  const menuItemElement = document.createElement("li");
-  menuItemElement.appendChild(nameElement);
-  menuItemElement.appendChild(document.createTextNode(": "));
-  menuItemElement.appendChild(descriptionElement);
-
-  return menuItemElement;
-}
-
-function createMenuSection(title, items) {
+  const sectionSupheader = document.createElement("p");
   const sectionHeader = document.createElement("h2");
-  sectionHeader.textContent = title;
-  sectionHeader.classList.add("menu-subheader");
 
-  const sectionList = document.createElement("ul");
-  items.forEach((item) => {
-    sectionList.appendChild(createMenuItem(item));
+  sectionSupheader.textContent = section.supheader;
+  sectionSupheader.classList.add("section-supheader");
+
+  sectionHeader.textContent = section.header;
+  sectionHeader.classList.add("section-subheader");
+
+  headerContainer.appendChild(sectionSupheader);
+  headerContainer.appendChild(sectionHeader);
+
+  const menuListContainer = document.createElement('div');
+  menuListContainer.classList.add('section-items-container');
+  
+  section.items.forEach((sectionData) => {
+    const sectionItem = createSectionItem(sectionData);
+    menuListContainer.appendChild(sectionItem);
   });
 
-  return [sectionHeader, sectionList];
+  sectionContainer.appendChild(headerContainer);
+  sectionContainer.appendChild(menuListContainer);
+
+  return sectionContainer;
+}
+
+function createSectionItem(sectionData) {
+  const sectionItem = document.createElement("div");
+  sectionItem.classList.add("section-item");
+
+  const sectionRow = document.createElement('div');
+  sectionRow.classList.add("section-row");
+
+  const nameItem = createElementWithClassAndText(
+    "p",
+    "section-name",
+    sectionData.name
+  );
+  const line = createElementWithClassAndText("span", "decorative-line", '');
+  const priceItem = createElementWithClassAndText(
+    "p",
+    "section-price",
+    sectionData.price + " CNF"
+  );
+
+  sectionRow.appendChild(nameItem);
+  sectionRow.appendChild(line);
+  sectionRow.appendChild(priceItem);
+
+  const descriptionItem = createElementWithClassAndText(
+    "p",
+    "section-description",
+    sectionData.description
+  );
+
+  sectionItem.appendChild(sectionRow);
+  sectionItem.appendChild(descriptionItem);
+
+  return sectionItem;
 }
