@@ -2,8 +2,9 @@ import { getRestaurantHomePage } from "./main-page.js";
 import { getRestaurantMenuPage } from "./menu-page.js";
 import { getRestaurantLocationPage } from "./location-page.js";
 import { getRestaurantAboutPage } from "./about-page.js";
-import "./styles/style.css";
 import { createImageElement } from "./utils.js";
+
+import "./styles/style.css";
 
 import Logo from "./images/logo2.svg";
 
