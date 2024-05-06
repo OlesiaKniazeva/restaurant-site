@@ -65,3 +65,11 @@ export function createSetOfParagraphs(data, classNameContainer, classNameData) {
 
   return contentDiv;
 }
+
+export function setUpLogo(LogoImg, width=0, height=width) {
+  const logoButton = document.getElementById("logo");
+  const logoImage = createImageElement(LogoImg, "logo", width, height);
+
+  logoButton.innerHTML = '';
+  logoButton.appendChild(logoImage);
+}

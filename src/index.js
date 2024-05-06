@@ -2,11 +2,12 @@ import { getRestaurantHomePage } from "./main-page.js";
 import { getRestaurantMenuPage } from "./menu-page.js";
 import { getRestaurantLocationPage } from "./location-page.js";
 import { getRestaurantAboutPage } from "./about-page.js";
-import { createImageElement } from "./utils.js";
+import { setUpLogo } from "./utils.js";
+import { getMobileLayout } from "./mobile-layout.js";
 
 import "./styles/style.css";
 
-import Logo from "./images/logo2.svg";
+import Logo from "./images/logo-desktop.svg";
 
 const header = document.querySelector(".main-header");
 const footer = document.getElementById("footer");
@@ -21,18 +22,13 @@ const pageFunctions = {
   about: getRestaurantAboutPage,
 };
 
-setUpLogo();
+setUpLogo(Logo, 140);
+getMobileLayout();
 let currentPage = 'home';
 pageFunctions[currentPage]();
 
 header.addEventListener("click", changePage);
 
-function setUpLogo() {
-  const logoButton = document.getElementById("logo");
-  const logoImage = createImageElement(Logo, "logo", 140);
-
-  logoButton.appendChild(logoImage);
-}
 
 function changePage(event) {
   const clickedId = event.target.id;

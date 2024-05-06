@@ -33,6 +33,10 @@ html {
   box-sizing: border-box;
 }
 
+img {
+  pointer-events: none;
+}
+
 *,
 *::before,
 *::after {
@@ -53,7 +57,6 @@ body {
   font-size: 20px;
   font-weight: 200;
   letter-spacing: 1px;
-  min-width: 800px;
 }
 
 body h1,
@@ -111,7 +114,6 @@ a {
 }
 
 #logo img {
-  pointer-events: none;
   min-width: 160px;
 }
 
@@ -161,8 +163,8 @@ button {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: -2;
   filter: brightness(90%) saturate(50%);
@@ -233,7 +235,7 @@ button.book:hover {
 }
 
 .menu .background-image {
-  width: 100vw;
+  width: 100%;
   height: 500px;
   position: absolute;
   top: 0;
@@ -344,12 +346,11 @@ button.book:hover {
   margin: 80px;
 }
 
-@media (min-width:  1000px) {
+@media (min-width: 1000px) {
   .section-image {
     height: 800px;
   }
 }
-
 
 /* Location Page */
 
@@ -359,7 +360,7 @@ button.book:hover {
 }
 
 .location .background-image {
-  width: 100vw;
+  width: 100%;
   height: 500px;
   position: absolute;
   top: 0;
@@ -430,7 +431,7 @@ button.book:hover {
 /* About Page */
 
 .about .background-image {
-  width: 100vw;
+  width: 100%;
   height: 500px;
   position: absolute;
   top: 0;
@@ -537,4 +538,65 @@ button.book:hover {
 
 .contacts-container p {
   margin: 0;
+}
+
+/* Mobile Layout */
+
+#hamburger:hover {
+  transform: scaleX(-1);
+}
+
+.main-buttons-container.mobile.visible {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: absolute;
+  top: 100%; 
+  width: 100%;
+  left: 0;
+  background-color: rgb(1, 7, 23);
+  z-index: 2;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.restaurant-pages-nav {
+  position: static;
+}
+
+.main-header {
+  position: relative;
+}
+
+.main-buttons-container.mobile.visible button {
+  border-bottom: none;
+  padding: 10px;
+}
+
+.main-buttons-container.mobile.visible button:hover {
+  background-color: rgb(4, 14, 40);
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .restaurant-pages-nav .main-buttons-container {
+    display: none;
+  }
+
+  .main-header {
+    height: 100px;
+    justify-content: right;
+    background-color: rgb(2, 6, 16);
+  }
+
+  .restaurant-pages-nav #logo {
+    top: 26px;
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+  #hamburger {
+    display: none;
+  }
 }
