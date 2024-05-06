@@ -22,12 +22,12 @@ export function getMobileLayout() {
 
 function processClicks(event) {
   const target = event.target;
-  console.log(target);
+
+  if (!event.currentTarget.classList.contains("mobile")) {
+    return;
+  }
 
   const id = target.id;
-  console.log(id);
-  console.log("here");
-  console.log(target.type);
 
   if (id === "hamburger") {
     toggleDropdown();
@@ -38,12 +38,12 @@ function processClicks(event) {
 
 function toggleMobileDesktop(event) {
   if (event.matches) {
-    console.log("mobile");
-
     menu.classList.add("mobile");
+    navbar.classList.add("mobile");
     setUpLogo(LogoMobile, 250, 50);
   } else {
     menu.classList.remove("mobile");
+    navbar.classList.remove("mobile");
     setUpLogo(LogoDesktop, 140);
   }
 }
