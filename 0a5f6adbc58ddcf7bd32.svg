@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="117.91428mm"
+   height="12.344404mm"
+   viewBox="0 0 117.91429 12.344405"
+   version="1.1"
+   id="svg9740"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9737">
+    <rect
+       x="-24.745787"
+       y="-38.108845"
+       width="613.5036"
+       height="93.827339"
+       id="rect9294" />
+    <rect
+       x="-56.408569"
+       y="-66.495056"
+       width="566.83716"
+       height="160.60777"
+       id="rect4888" />
+    <rect
+       x="891.38898"
+       y="4342.6509"
+       width="4093.6521"
+       height="884.54315"
+       id="rect8232" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-56.460764,-183.27134)">
+    <text
+       xml:space="preserve"
+       id="text8230"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:289.934px;line-height:1.25;font-family:Cinzel;-inkscape-font-specification:'Cinzel, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;white-space:pre;shape-inside:url(#rect8232);display:inline;fill:#c9ab81;fill-opacity:1;stroke:none"
+       transform="matrix(0.05840412,0,0,0.05840412,3.8919932,-72.627001)"><tspan
+         x="891.38867"
+         y="4588.8147"
+         id="tspan12662">Nature Gifts</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,56.663964,183.22054)"
+       id="text4886"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect4888);fill:#000000;fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,56.663964,183.22054)"
+       id="text9292"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect9294);fill:#000000;fill-opacity:1;stroke:none" />
+  </g>
+</svg>
